@@ -1,15 +1,15 @@
 {
   "name": "grunt-prompt",
   "description": "Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields.",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "author": {
     "name": "Dylan Greene",
     "email": "dylang@gmail.com"
   },
-  "homepage": "https://github.com/dylang/grunt-prompt",
+  "homepage": "https://github.com/jrue/grunt-prompt",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dylang/grunt-prompt.git"
+    "url": "git://github.com/jrue/grunt-prompt.git"
   },
   "license": "MIT",
   "main": "Gruntfile.js",
@@ -41,7 +41,7 @@
     "questions"
   ],
   "dependencies": {
-    "inquirer": "^0.11.0",
-    "lodash": "^3.10.1"
+    "inquirer": "^6.5.1",
+    "lodash": "^4.17.15"
   }
 }
