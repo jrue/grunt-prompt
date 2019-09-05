@@ -41,7 +41,7 @@
     "questions"
   ],
   "dependencies": {
-    "inquirer": "^0.11.0",
+    "inquirer": "^6.5.1",
     "lodash": "^4.17.15"
   }
 }

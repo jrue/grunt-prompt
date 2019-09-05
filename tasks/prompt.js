@@ -34,14 +34,22 @@ module.exports = function (grunt) {
         if (questions) {
             var done = this.async();
 
-            questions = questions.map(function(question){
+            questions = questions.filter(function(question){
+              var config = question.config || question.name;
+              if(grunt.option(config)){
+                grunt.config(config, grunt.option(config));
+                return false;
+              } else {
+                return true;
+              }
+            }).map(function(question){
                 // config just made more sense than name, but we accept both
                 question.name = question.config || question.name;
                 question.choices = addSeparator(question.choices);
                 return question;
             });
 
-            inquirer.prompt( questions, function( answers ) {
+            inquirer.prompt( questions ).then( function( answers ) {
                 _.forEach(answers, function(answer, configName){
                     grunt.config(configName, answer);
                 });

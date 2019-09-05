@@ -291,10 +291,10 @@ module.exports = function (grunt) {
     grunt.registerTask('results', 'show results from grunt-prompt', function(subtask){
         _(grunt.config('prompt'))
             .pick(subtask || _.constant(true))
-            .pluck('options')
-            .pluck('questions')
+            .map('options')
+            .map('questions')
             .flatten()
-            .pluck('config')
+            .map('config')
             .each(function(key){
                 console.log(key + ':\t', grunt.config(key));
             });
